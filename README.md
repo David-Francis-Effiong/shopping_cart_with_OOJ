@@ -3,6 +3,10 @@
 A responsive shopping cart application built with **HTML**, **CSS (Bootstrap)**, and **JavaScript**.  
 This project is an evolution of a basic DOM manipulation project, now rewritten using **Object-Oriented JavaScript (OOJ)** principles to ensure clean architecture and separation of concerns.
 
+## Screenshots
+![Shopping Cart View 1](./assets/shopping-cart1.PNG)
+![Shopping Cart View 2](./assets/shopping-cart2.PNG)
+
 ---
 
 ## Features
