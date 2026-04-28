@@ -1,72 +1,159 @@
-/* .navbar-brand {
-  color: green !important;
-} */
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
-  color:rgb(15, 9, 1); 
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
-i {
-  font-size: 35px;
-  cursor: pointer;
-  margin: 0 10px;
-  color: black;
+body {
+  /* Dynamic gradient background */
+  background: linear-gradient(-45deg, #2b4162, #fa9c7a, #385170, #142d4c);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(17, 17, 17, 0.6);
-  
+  flex: 1;
+  padding: 2rem 0;
 }
 
+/* Glassmorphism card container */
 .shopping-card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e9d5d5;
-  border-radius: 10px;
-  padding: 3%;
-  margin: 50px 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 20px;
+  padding: 3% 5%;
+  margin: 20px 0;
+  width: 90%;
+  max-width: 1200px;
 }
+
+.total-price {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  color: #142d4c;
+}
+
 .total-price span {
-  font-size: 30px;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .total {
-  font-weight: bold;
+  font-weight: 700;
+  color: #fa9c7a;
 }
+
 .list-products {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  width: 70%;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
 }
+
 .card {
   padding: 5%;
+  border: none;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.unit-price {
+  color: #385170;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
 .quantity {
   font-size: 25px;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
 }
 
 .card-body div {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
-.fa-trash-alt {
-  color: #de6b5c;
+i {
+  font-size: 30px;
+  cursor: pointer;
+  margin: 0 12px;
+  color: #385170;
+  transition: all 0.2s ease;
 }
+
+i:hover {
+  transform: scale(1.2);
+}
+
+.fa-plus-circle:hover { color: #28a745; }
+.fa-minus-circle:hover { color: #ffc107; }
+.fa-trash-alt { color: #de6b5c; }
+.fa-trash-alt:hover { color: #c82333; transform: scale(1.2) rotate(15deg); }
+.fa-heart { color: #ccc; }
+.fa-heart:hover { color: #ff6b6b; }
